@@ -76,10 +76,10 @@
                         </f:entry>
                         <f:optionalBlock title="${m_pub.retry()}" name="retry" checked="${publisher.retry != null}"  help="${helpUrl}retry.html">
                             <f:entry title="${m_retry.retries()}" field="retries" help="${helpUrl}retries.html">
-                                <f:textbox name="retries" value="${publisher.retry.retries}" default="${defaults.retry.retries}"/>
+                                <f:number name="retries" value="${publisher.retry.retries}" default="${defaults.retry.retries}" min="0" step="1" clazz="number"/>
                             </f:entry>
                             <f:entry title="${m_retry.retryDelay()}" field="retryDelay" help="${helpUrl}retryDelay.html">
-                                <f:textbox name="retryDelay" value="${publisher.retry.retryDelay}" default="${defaults.retry.retryDelay}"/>
+                                <f:number name="retryDelay" value="${publisher.retry.retryDelay}" default="${defaults.retry.retryDelay}" min="1" step="1" clazz="positive-number"/>
                             </f:entry>
                         </f:optionalBlock>
                         <f:optionalBlock title="${m_pub.label()}" name="label" checked="${publisher.label != null}"  help="${helpUrl}label.html">
